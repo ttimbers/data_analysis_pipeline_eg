@@ -34,6 +34,3 @@ Rscript -e "rmarkdown::render('doc/count_report.Rmd')"
     - `sys`
     - `collections`
     - `wordcount`
-
-The tutorials for this example can be found here:
-- https://github.ubc.ca/MDS-2018-19/DSCI_522_dsci-workflows_students
