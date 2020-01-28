@@ -6,14 +6,17 @@ novels. It reports the top 10 most occurring words in each book in a [report](do
 
 ### Usage:
 
-1. Clone this repo, and using the command line, navigate to the root of this project.
-
-2. Run the following commands:
+To replicate the analysis, clone this GitHub repository, install the [dependencies](#dependencies) listed below, and run the following command at the command line/terminal from the root directory of this project:
 
 ```
-bash runall.sh
+make all
 ```
 
+To reset the repo to a clean state, with no intermediate or results files, run the following command at the command line/terminal from the root directory of this project:
+
+```
+make clean
+```
 
 ### Depenedencies
 - R & R libraries:
@@ -26,3 +29,4 @@ bash runall.sh
     - `sys`
     - `collections`
     - `wordcount`
+- GNU make 4.2.1
