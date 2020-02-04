@@ -23,6 +23,7 @@ make clean
     - `rmarkdown`
     - `knitr`
     - `here`
+    - `cowsay`
 - Python & Python libraries:
     - `matplotlib`
     - `numpy`

@@ -6,6 +6,7 @@ output: github_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir = here::here())
+library(cowsay)
 ```
 
 ## The most frequent words in the 4 novels we studied:
@@ -21,3 +22,8 @@ Last:
 
 Sierra:
 ![alt tag](../results/figure/sierra.png)
+
+And to end this happy story...
+```{r endless horse neigh, echo = FALSE}
+say(what = "Neigh!", by = "endlesshorse")
+```
