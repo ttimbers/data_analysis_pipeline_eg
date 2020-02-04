@@ -6,8 +6,6 @@ novels. It reports the top 10 most occurring words in each book in a [report](do
 
 ### Usage:
 
-### Usage:
-
 There are two suggested ways to run this analysis:
 
 #### 1. Using Docker
