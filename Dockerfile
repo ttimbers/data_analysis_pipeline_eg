@@ -1,10 +1,10 @@
 # Docker file for data_analysis_pipeline_eg
-# Tiffany Timbers, Dec, 2017
+# Tiffany Timbers, Jan, 2020
 
 # use rocker/tidyverse as the base image and
 FROM rocker/tidyverse
 
-# then install the cowsay package
+# then install the cowsay & here packages
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   && install2.r --error \
     --deps TRUE \
@@ -22,5 +22,5 @@ RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_6
     find /opt/conda/ -follow -type f -name '*.js.map' -delete && \
     /opt/conda/bin/conda clean -afy
 
-# install docopt
+# install docopt python package
 RUN /opt/conda/bin/conda install -y -c anaconda docopt
