@@ -20,7 +20,11 @@ RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_6
     echo "conda activate base" >> ~/.bashrc && \
     find /opt/conda/ -follow -type f -name '*.a' -delete && \
     find /opt/conda/ -follow -type f -name '*.js.map' -delete && \
-    /opt/conda/bin/conda clean -afy
+    /opt/conda/bin/conda clean -afy && \
+    /opt/conda/bin/conda update -n base -c defaults conda
 
 # install docopt python package
 RUN /opt/conda/bin/conda install -y -c anaconda docopt
+
+# put anaconda python in path
+ENV PATH="/opt/conda/bin:${PATH}"
