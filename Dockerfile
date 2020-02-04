@@ -8,21 +8,19 @@ FROM rocker/tidyverse
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   && install2.r --error \
     --deps TRUE \
-    cowsay
+    cowsay \
+    here
 
-# install python 3
-RUN apt-get update \
-  && apt-get install -y python3-pip python3-dev \
-  && cd /usr/local/bin \
-  && ln -s /usr/bin/python3 python \
-  && pip3 install --upgrade pip
+# install the anaconda distribution of python
+RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh -O ~/anaconda.sh && \
+    /bin/bash ~/anaconda.sh -b -p /opt/conda && \
+    rm ~/anaconda.sh && \
+    ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
+    echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
+    echo "conda activate base" >> ~/.bashrc && \
+    find /opt/conda/ -follow -type f -name '*.a' -delete && \
+    find /opt/conda/ -follow -type f -name '*.js.map' -delete && \
+    /opt/conda/bin/conda clean -afy
 
-# get python package dependencies
-RUN apt-get install -y python3-tk
-
-# install numpy, pandas & matplotlib
-RUN pip3 install numpy
-RUN pip3 install pandas
-RUN apt-get update && \
-    pip3 install matplotlib && \
-    rm -rf /var/lib/apt/lists/*
+# install docopt
+RUN /opt/conda/bin/conda install -y -c anaconda docopt
