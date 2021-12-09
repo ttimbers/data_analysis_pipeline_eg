@@ -1,0 +1,9 @@
+services:
+  analysis-env:
+    image: ttimbers/data_analysis_pipeline_eg
+    ports:
+      - "8787:8787"
+    volumes:
+      - .:/home/rstudio/data_analysis_eg
+    environment:
+      PASSWORD: password

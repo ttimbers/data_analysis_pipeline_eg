@@ -17,7 +17,7 @@ There are two suggested ways to run this analysis:
 4. Type the following:
 
 ```
-docker run --rm -v /$(pwd):/home/rstudio/data_analysis_eg ttimbers/data_analysis_pipeline_eg make -C /home/rstudio/data_analysis_eg all
+docker-compose run --rm analysis-env make -C /home/rstudio/data_analysis_eg all
 ```
 
 #### 2. After installing all dependencies (does not depend on Docker)
